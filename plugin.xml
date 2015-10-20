@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.niuqia.appupgrade" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AppUpgrade</name>
+    <description>Cordova iOS upgrade plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,app,iOS,upgrade</keywords>
+    <engines>
+            <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    
+    <js-module name="AppUpgrade" src="www/AppUpgrade.js">
+        <clobbers target="window.AppUpgrade" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="AppUpgrade">
+                <param name="ios-package" value="AppUpgrade" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/AppUpgrade.h" compiler-flags="-fno-objc-arc" />
+        <source-file src="src/ios/AppUpgrade.m" compiler-flags="-fno-objc-arc" />
+
+        <header-file src="src/ios/lib/AFNetworking/AFNetworking.h" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFHTTPRequestOperation.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFHTTPRequestOperation.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFHTTPRequestOperationManager.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFHTTPRequestOperationManager.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFHTTPSessionManager.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFHTTPSessionManager.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFNetworkReachabilityManager.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFNetworkReachabilityManager.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFSecurityPolicy.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFSecurityPolicy.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFURLConnectionOperation.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFURLConnectionOperation.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFURLRequestSerialization.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFURLRequestSerialization.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFURLResponseSerialization.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFURLResponseSerialization.m" compiler-flags="-fobjc-arc" />
+        <header-file src="src/ios/lib/AFNetworking/AFURLSessionManager.h" compiler-flags="-fobjc-arc" />
+        <source-file src="src/ios/lib/AFNetworking/AFURLSessionManager.m" compiler-flags="-fobjc-arc" />
+    </platform>
+</plugin>
